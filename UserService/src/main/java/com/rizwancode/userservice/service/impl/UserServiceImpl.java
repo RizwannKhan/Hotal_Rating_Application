@@ -2,7 +2,6 @@ package com.rizwancode.userservice.service.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rizwancode.userservice.entity.User;
@@ -10,11 +9,13 @@ import com.rizwancode.userservice.exceptions.ResourceNotFoundException;
 import com.rizwancode.userservice.repository.UserRepository;
 import com.rizwancode.userservice.service.UserService;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-	@Autowired
-	private UserRepository userRepository;
+	private final UserRepository userRepository;
 	
 	@Override
 	public User saveUser(User user) {
